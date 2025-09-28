@@ -1,7 +1,6 @@
 const burgerBtn = document.querySelector(".header__burger");
 const menu = document.querySelector(".header__menu");
 
-// Открыть / закрыть меню при клике на бургер
 burgerBtn.addEventListener("click", () => {
   menu.classList.toggle("show");
 });

@@ -1,21 +1,21 @@
-
-$bp-desktop: 1280px;
-
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
 .header__container {
-  max-width: var(--bp-desktop);
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -24,49 +24,21 @@ $bp-desktop: 1280px;
   justify-content: space-between;
 }
 
-.header__nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
-}
-
-.header__logo {
+.header__logo img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
 }
 
 .header__menu {
   display: flex;
   list-style: none;
   gap: 40px;
-  margin: 0;
-  padding: 0;
-
-    @media screen and (min-width: 1280px) { // десктоп
-    display: flex;
-  }
-
-  &.show { // класс для открытия через бургер
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 106px;
-    right: 0;
-    background: rgba(255,255,255,0.95);
-    width: 200px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    gap: 20px;
-  }
-}
-
-.link {
-  text-decoration: none;
-  color: #011c44;
-  font-weight: 600;
 }
 
 .header__burger {
@@ -74,13 +46,9 @@ $bp-desktop: 1280px;
   background: transparent;
   border: none;
   cursor: pointer;
-  
-    @media screen and (min-width: 1280px) {
-    display: none;
-  }
 }
 
-/* --- Адаптив --- */
+/* --- Мобильный адаптив --- */
 @media screen and (max-width: 1279px) {
   .header__menu {
     display: none;
@@ -88,7 +56,7 @@ $bp-desktop: 1280px;
     position: absolute;
     top: 106px;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255,255,255,0.95);
     width: 200px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -102,4 +70,10 @@ $bp-desktop: 1280px;
   .header__burger {
     display: block;
   }
+}
+
+.link {
+  text-decoration: none;
+  color: #011c44;
+  font-weight: 600;
 }
