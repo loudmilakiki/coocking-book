@@ -16,35 +16,37 @@ $bp-desktop: 1280px;
   }
 
   &__nav {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: space-between;
-    margin-top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // логотип слева, меню справа
+  flex-grow: 1;
+  gap: 40px;
+  margin-top: 0; // убрать отрицательный отступ
   }
 
   &__menu {
-    display: none; // по умолчанию скрыто
+    display: none;
 
-    @media screen and (min-width: $bp-desktop) {
-      display: flex;   // видно на десктопе
-      gap: 60px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+  @media screen and (min-width: $bp-desktop) {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
   }
 
   &__burger {
-    background-color: transparent;
-    border: none;
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    fill: var(--color-primary-light);
+    display: block; // по умолчанию виден на мобильных
+  background-color: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  fill: var(--color-primary-light);
 
-    @media screen and (min-width: $bp-desktop) {
-      display: none;
+  @media screen and (min-width: $bp-desktop) {
+    display: none; // скрыть на десктопе
     }
   }
 }
