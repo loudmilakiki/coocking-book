@@ -1,0 +1,73 @@
+$bp-desktop: 1280px;
+ 
+.hero-section {
+     padding: 300px 0;
+    background-image:linear-gradient(
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.46)
+  ),
+      url("/image/cooking.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+&__container{
+      max-width: 560px;
+        margin: 0 auto;
+        display: flex;              // делаем флекс-контейнер
+    flex-direction: column;     // элементы в колонку
+    align-items: center;        // по горизонтали в центр
+    text-align: center;
+}
+
+&__face {
+            width: 100%;
+        max-width: 530px;
+        height: auto;
+        margin-bottom: 24px;
+}
+  &__button {
+     padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: $bp-desktop) {
+        justify-content: flex-start;
+       align-items: flex-start;
+  }
+}
+
+  &__brand {
+          display: flex;
+   justify-content: center;
+   text-align: center;
+      font-family: "Play", sans-serif;
+       font-size: clamp(64px, 5vw, 64px);
+      font-weight: bold;
+      padding: 24px 0 24px 0;
+    color: var(--color-primary-brand);
+    line-height: 1.2;
+
+    @media screen and (min-width: $bp-desktop) {
+        font-size: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+  
+    }
+  }
+
+  &__title {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 48px;
+    color: var(--color-primary-brand);
+
+    @media screen and (min-width: $bp-desktop) {
+        align-items: flex-start;
+    }
+}
+}

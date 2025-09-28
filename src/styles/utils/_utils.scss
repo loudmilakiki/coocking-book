@@ -1,0 +1,9 @@
+.visually-hidden {
+    position: absolute;
+    color: var(--color-primary-white);
+    left: -10000px;
+    top: auto;
+    width: 200px;
+    height: 1px;
+    overflow: hidden;
+ }

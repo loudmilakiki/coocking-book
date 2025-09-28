@@ -1,0 +1,34 @@
+// Импортируем переменные, миксины, утилиты
+@use 'utils/variables' as *;
+@use 'utils/mixins';
+@use 'utils/utils';
+
+// Layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/container';
+@use 'layout/hero';
+
+
+// Компоненты
+@use 'components/recipe-card';
+@use 'components/button';
+@use 'components/category';
+
+$primary-color: #ff6f61;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: $primary-color;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section--large {
+  padding: 120px 0;
+}
+
+
