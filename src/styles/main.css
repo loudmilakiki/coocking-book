@@ -106,8 +106,8 @@
 
 .hero-section {
   padding: 300px 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.46))), url("image/cooking.jpg");
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.46)), url("image/cooking.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.46))), url("image/cooking.png");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.46)), url("image/cooking.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
