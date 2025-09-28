@@ -57,32 +57,13 @@
   margin-top: 0;
 }
 .header__menu {
-  display: none;
-}
-@media screen and (min-width: 1280px) {
-  .header__menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 60px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-}
-.header__burger {
-  display: block;
-  background-color: transparent;
-  border: none;
-  width: 24px;
-  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
   padding: 0;
-  fill: var(--color-primary-light);
-}
-@media screen and (min-width: 1280px) {
-  .header__burger {
-    display: none;
-  }
 }
 
 .img {
