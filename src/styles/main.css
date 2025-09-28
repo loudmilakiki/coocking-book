@@ -60,8 +60,8 @@
 }
 
 .header__logo img {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
@@ -82,6 +82,13 @@
   gap: 40px;
 }
 
+.link {
+  text-decoration: none;
+  color: #011c44;
+  font-weight: 600;
+}
+
+/* --- бургер по умолчанию скрыт --- */
 .header__burger {
   display: none;
   background: transparent;
@@ -89,30 +96,19 @@
   cursor: pointer;
 }
 
-/* --- Десктоп (≥1280px) --- */
-@media screen and (min-width: 1280px) {
+/* --- десктоп ≥1280px --- */
+@media (min-width: 1280px) {
   .header__menu {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
-    display: flex !important; /* меню всегда видно */
-    position: static;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    background: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    width: auto;
-    padding: 0;
-    gap: 40px;
+    display: flex !important;
   }
   .header__burger {
-    display: none; /* бургер скрыт */
+    display: none;
   }
 }
-/* --- Мобильный (<1280px) --- */
-@media screen and (max-width: 1279px) {
+/* --- мобильный <1280px --- */
+@media (max-width: 1279px) {
   .header__menu {
     display: none;
     -webkit-box-orient: vertical;
@@ -121,7 +117,7 @@
             flex-direction: column;
     position: absolute;
     top: 106px;
-    right: 0;
+    right: 20px;
     background: rgba(255, 255, 255, 0.95);
     width: 200px;
     padding: 20px;
@@ -138,12 +134,6 @@
     display: block;
   }
 }
-.link {
-  text-decoration: none;
-  color: #011c44;
-  font-weight: 600;
-}
-
 .container {
   width: 100%;
   max-width: 1440px; /* ограничение по ширине */
