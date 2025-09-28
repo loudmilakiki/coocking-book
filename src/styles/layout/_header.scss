@@ -51,7 +51,25 @@
   cursor: pointer;
 }
 
-/* --- Мобильный адаптив --- */
+/* --- Десктоп (≥1280px) --- */
+@media screen and (min-width: 1280px) {
+  .header__menu {
+    display: flex !important; /* меню всегда видно */
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
+    gap: 40px;
+  }
+
+  .header__burger {
+    display: none; /* бургер скрыт */
+  }
+}
+
+/* --- Мобильный (<1280px) --- */
 @media screen and (max-width: 1279px) {
   .header__menu {
     display: none;
@@ -74,6 +92,7 @@
     display: block;
   }
 }
+
 
 .link {
   text-decoration: none;

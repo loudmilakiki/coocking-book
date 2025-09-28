@@ -89,7 +89,29 @@
   cursor: pointer;
 }
 
-/* --- Мобильный адаптив --- */
+/* --- Десктоп (≥1280px) --- */
+@media screen and (min-width: 1280px) {
+  .header__menu {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important; /* меню всегда видно */
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    width: auto;
+    padding: 0;
+    gap: 40px;
+  }
+  .header__burger {
+    display: none; /* бургер скрыт */
+  }
+}
+/* --- Мобильный (<1280px) --- */
 @media screen and (max-width: 1279px) {
   .header__menu {
     display: none;
@@ -381,7 +403,6 @@ a:hover {
 }
 
 .recepi-section {
-  margin-top: 106px; /* отступ от хедера */
   padding: 60px 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.46)));
   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.46));
