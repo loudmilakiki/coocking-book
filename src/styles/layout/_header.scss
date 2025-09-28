@@ -12,16 +12,19 @@ $bp-desktop: 1280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+     width: 100%;
+    max-width: 1280px; // ограничиваем ширину
+    margin: 0 auto;    // центрируем на экране
+    padding: 0 20px;
   }
 
   &__nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; // логотип слева, меню справа
-  flex-grow: 1;
-  gap: 40px;
-  margin-top: 0; // убрать отрицательный отступ
+  // justify-content: space-between; // логотип слева, меню справа
+  // flex-grow: 1;
+  gap: 600px;
+  // margin-top: 0; // убрать отрицательный отступ
   }
 
   &__menu {
