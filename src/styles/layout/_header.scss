@@ -1,48 +1,125 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+$bp-desktop: 1280px;
+$bp-tablet: 768px;
+$bp-mobile: 320px;
 
 .header {
-  position: relative;
   width: 100%;
-  height: 106px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-}
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5));
+  padding: 10px 20px;
 
-.header__container {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  &__container {
+    display: flex;
+    flex-direction: column; // мобильные: колонка
+    align-items: center;
+    gap: 15px;
 
-.header__logo img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row; // планшет и десктоп: строка
+      align-items: center;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column; // мобильные: колонка
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row; // горизонтально
+      margin-left: auto;   // меню прижато к правому краю
+      gap: 40px;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      gap: 60px;
+    }
+  }
 }
 
 .header__nav {
   display: flex;
+  flex-direction: column; // мобильные: колонка
   align-items: center;
+  gap: 15px;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-direction: row;        // строка
+    align-items: center;
+    justify-content: space-between; // лого слева, меню справа
+    width: 100%;
+  }
 }
 
-.header__menu {
-  display: flex;
+.header__menu li {
+  position: relative; // чтобы выпадающий список позиционировался относительно пункта
+}
+
+.header__menu .dropdown-menu {
+  display: none; // скрываем по умолчанию
+  position: absolute;
+  top: 100%; // под родительским пунктом
+  left: 0;
+  background: #fff;
+  padding: 0;
+  margin: 0;
   list-style: none;
-  gap: 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.header__menu li:hover .dropdown-menu {
+  display: block; // показываем при наведении
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #011c44;
+  display: block;
+}
+
+
+
+.img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @media screen and (min-width: $bp-desktop) {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 .link {
   text-decoration: none;
   color: #011c44;
   font-weight: 600;
+  font-size: 16px;
+
+  &:hover {
+    color: #0056b3;
+  }
+
+  @media screen and (min-width: $bp-desktop) {
+    font-size: 18px;
+  }
+}
+
+.menu-categories > span {
+  font-size: 18px; // размер шрифта
+  font-weight: 600; // жирность
+  cursor: pointer;
+  color: #011c44;
+
+  &:hover {
+    color: #0056b3; // цвет при наведении
+  }
 }

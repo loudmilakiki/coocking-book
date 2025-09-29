@@ -1,4 +1,3 @@
-// Данные рецептов
 const recipes = {
   soups: [
     {
@@ -14,6 +13,16 @@ const recipes = {
   ],
   baking: [
     {
+      name: "Пирог с яблоками",
+      img: "image/backing.jpg",
+      text: "1. Замесить тесто\n2. Добавить яблоки\n3. Выпекать 40 минут",
+    },
+    {
+      name: "Пирог с яблоками",
+      img: "image/backing.jpg",
+      text: "1. Замесить тесто\n2. Добавить яблоки\n3. Выпекать 40 минут",
+    },
+  {
       name: "Пирог с яблоками",
       img: "image/backing.jpg",
       text: "1. Замесить тесто\n2. Добавить яблоки\n3. Выпекать 40 минут",
@@ -63,55 +72,75 @@ const recipes = {
   ],
 };
 
-// Получаем категорию из URL
+const categoryNames = {
+  soups: "Супы",
+  baking: "Выпечка",
+  salads: "Салаты",
+  fish: "Рыба",
+  meat: "Мясо",
+  marinades: "Маринады",
+  sauces: "Соусы",
+  desserts: "Десерты",
+};
+
 const params = new URLSearchParams(window.location.search);
 const category = params.get("category");
 
-// Заголовок категории
 const categoryTitle = document.querySelector("#category-title");
-categoryTitle.textContent = category ? `Рецепты: ${category}` : "Рецепты";
+categoryTitle.textContent =
+  category && categoryNames[category]
+    ? `Рецепты: ${categoryNames[category]}`
+    : "Рецепты";
 
-// Контейнер для карточек
 const recepiContainer = document.querySelector("#recepi-container");
 
-// Модалка
 const modal = document.getElementById("recipe-modal");
 const modalTitle = document.getElementById("recipe-title");
 const modalText = document.getElementById("recipe-text");
-const modalImg = document.getElementById("recipe-img");
 const modalClose = document.getElementById("recipe-close");
 
-// Функция открытия модалки
 function openRecipeModal(recipe) {
   modalTitle.textContent = recipe.name;
   modalText.textContent = recipe.text;
-  modalImg.src = recipe.img;
-  modalImg.alt = recipe.name;
   modal.classList.add("show");
 }
 
-// Функция закрытия модалки
 function closeModal() {
   modal.classList.remove("show");
 }
 
-// Закрытие по кнопке
 modalClose.onclick = closeModal;
-
-// Закрытие при клике вне контента
 window.onclick = (e) => {
   if (e.target === modal) closeModal();
 };
-
-// Создание карточек
 if (category && recipes[category]) {
-  recipes[category].forEach((item) => {
+  recipes[category].forEach((recipe) => {
     const card = document.createElement("div");
     card.className = "recepi-list__card";
-    card.innerHTML = `<p class="recepi-card__name">${item.name}</p>`;
-    card.addEventListener("click", () => openRecipeModal(item));
+    card.innerHTML = `
+      <img src="${recipe.img}" alt="${recipe.name}">
+      <p class="recepi-card__name">${recipe.name}</p>
+    `;
+    card.addEventListener("click", () => openRecipeModal(recipe));
     recepiContainer.appendChild(card);
   });
 } else {
   recepiContainer.innerHTML = "<p>Рецептов в этой категории пока нет.</p>";
 }
+
+// Модальное окно без фото
+function openRecipeModal(recipe) {
+  modalTitle.textContent = recipe.name;
+  modalText.textContent = recipe.text;
+  modal.classList.add("show");
+}
+
+const categorySelect = document.getElementById("category-select");
+
+categorySelect.addEventListener("change", (e) => {
+  const url = e.target.value;
+  if (url) {
+    // Переходим на страницу выбранной категории
+    window.location.href = url;
+  }
+});

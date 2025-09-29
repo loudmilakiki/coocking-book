@@ -1,18 +1,18 @@
 $bp-desktop: 1280px;
  
 .hero-section {
-     padding: 300px 0;
+     padding: 10px 300px;
     background-image:linear-gradient(
     rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.46)
+    rgba(255, 255, 255, 0.8)
   ),
-     url("../../image/cooking.png");
+      url("/image/cooking.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
 
 &__container{
-      max-width: 560px;
+      max-width: 700px;
         margin: 0 auto;
         display: flex;              // делаем флекс-контейнер
     flex-direction: column;     // элементы в колонку
@@ -22,7 +22,7 @@ $bp-desktop: 1280px;
 
 &__face {
             width: 100%;
-        max-width: 530px;
+        max-width: 700px;
         height: auto;
         margin-bottom: 24px;
 }
@@ -42,15 +42,15 @@ $bp-desktop: 1280px;
           display: flex;
    justify-content: center;
    text-align: center;
-      font-family: "Play", sans-serif;
+      font-family: "Great Vibes", cursive;
        font-size: clamp(64px, 5vw, 64px);
       font-weight: bold;
       padding: 24px 0 24px 0;
-    color: var(--color-primary-brand);
+    color: #4c1414;
     line-height: 1.2;
 
     @media screen and (min-width: $bp-desktop) {
-        font-size: 100px;
+        font-size: 140px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -63,7 +63,9 @@ $bp-desktop: 1280px;
     flex-direction: column;
     text-align: center;
     margin: 0 auto;
-    font-size: 48px;
+    font-family: "Lora", serif;
+    font-size: 44px;
+    font-weight: bold;
     color: var(--color-primary-brand);
 
     @media screen and (min-width: $bp-desktop) {

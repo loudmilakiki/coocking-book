@@ -8,20 +8,44 @@
 </head>
 <body>
      <header class="header">
-    <div class="header__container">
-      <a href="#" class="header__logo">
-        <img src="./image/logo.svg" alt="Логотип" class="img">
-      </a>
-      <nav class="header__nav">
-        <ul class="header__menu">
-          <li><a href="#" class="link">Категории</a></li>
-          <li><a href="#" class="link">О себе</a></li>
-          <li><a href="#" class="link">Контакты</a></li>
-        </ul>
-      </nav>
-      
-    </div>
-  </header>
+      <div class="container">
+        <div class="header__container">
+        <nav class="header__nav">
+  <a href="#">
+    <img class="img" src="image/logo.svg" alt="логотип">
+  </a>
+  <ul class="header__menu">
+         <li><a href="index.html" class="link">Главная</a></li>
+    <li class="menu-categories">
+     <span>Категории</span>
+      <ul class="dropdown-menu">
+
+        <li><a href="recepi-list.html?category=soups" class="link">Супы</a></li>
+        <li><a href="recepi-list.html?category=baking" class="link">Выпечка</a></li>
+        <li><a href="recepi-list.html?category=salads" class="link">Салаты</a></li>
+        <li><a href="recepi-list.html?category=fish" class="link">Рыба</a></li>
+        <li><a href="recepi-list.html?category=meat" class="link">Мясо</a></li>
+        <li><a href="recepi-list.html?category=marinades" class="link">Маринады</a></li>
+        <li><a href="recepi-list.html?category=sauces" class="link">Соусы</a></li>
+        <li><a href="recepi-list.html?category=desserts" class="link">Десерты</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html" class="link">О себе</a></li>
+    <li><a href="contacts.html" class="link">Контакты</a></li>
+  </ul>
+</nav>
+
+
+            <!-- <button class="header__burger menu-btn-open" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button> -->
+
+        </div>
+      </div>
+    </header>
+
     <main>
      <section class="recepi-section section">
   <div class="container">
